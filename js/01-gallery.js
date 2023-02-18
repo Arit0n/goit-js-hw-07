@@ -25,11 +25,10 @@ gallery.append(...array);
 document.addEventListener("click", modalOpen);
 
 function modalOpen(evt) {
-  evt.preventDefault();
-
   if (evt.target.nodeName !== "IMG") {
     return;
   }
+  evt.preventDefault();
   const getAtr = evt.target.getAttribute("data-source");
   const module = basicLightbox.create(
     `<img src="${getAtr}" width="800" height="600">
