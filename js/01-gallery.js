@@ -13,8 +13,8 @@ galleryItems.forEach((elem) => {
   const imgItem = document.createElement("img");
   imgItem.classList.add("gallery__image");
   imgItem.src = elem.preview;
-  imgItem.alt = elem.description;
   imgItem.setAttribute("data-source", elem.original);
+  imgItem.alt = elem.description;
 
   linkItem.append(imgItem);
   itemBox.append(linkItem);
@@ -32,7 +32,7 @@ function modalOpen(evt) {
   }
   const getAtr = evt.target.getAttribute("data-source");
   const module = basicLightbox.create(
-    `<img src="${getAtr} width="800" height="600">
+    `<img src="${getAtr}" width="800" height="600">
       `,
     {
       onShow: () => {
